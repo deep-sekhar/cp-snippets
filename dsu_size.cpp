@@ -2,7 +2,7 @@ class DisSet {
 public:
     vector<int> sz, parent;
 
-    DisjointSet(int n) {
+    DisSet(int n) {
         sz.resize(n + 1, 1);
         parent.resize(n + 1);
         for (int i = 0; i <= n; i++) parent[i] = i;
