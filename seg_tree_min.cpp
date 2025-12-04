@@ -5,7 +5,7 @@ public:
 		seg.resize(4 * n + 1);
 	}
 
-	void build(int ind, int low, int high, vector<int> arr) {
+	void build(int ind, int low, int high, vector<int> &arr) {
 		if (low == high) {
 			seg[ind] = arr[low];
 			return;
@@ -43,3 +43,10 @@ public:
 		seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
 	}
 };
+
+// sample use:
+// vector<int> arr = {1, 3, 2, 7, 9, 11};
+// SGTree segTree(arr.size());
+// segTree.build(0, 0, arr.size() - 1, arr);
+// int minVal = segTree.query(0, 0, arr.size() - 1, 1, 4);
+// segTree.update(0, 0, arr.size() - 1, 2, 5);
